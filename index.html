@@ -1,0 +1,112 @@
+<!--Using ! as a snippet generates boiler plate code-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head> <!--Needed to contain metadata to define overall structure and behaviour of page-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konrad's Habit Tracker</title> <!--Title of the webpage shown in browser-->
+    <link rel="stylesheet" href="/assets/styles.css"> <!--This Links the external CSS file for personal styling-->
+    <style>
+        /*Internal CSS useful for quick non-global styling tweaks*/
+        /* Button Styles changes hover color to red and increase brightness by 20% */
+        .btn:hover {
+            filter: brightness(1.2);
+        }
+
+        /* Screen Reader Only Class, needed for better accessibility */
+        .sr-only {
+            position: absolute;
+            height: 1px;
+            width: 1px;
+            overflow: hidden;
+            clip: rect(1px, 1px, 1px, 1px);
+        }
+    </style>
+</head>
+
+<body> <!--Contains all the bulk of what user views-->
+    <main class="mainBody">
+        <!--Main content of the page, only one per page, instead of using inline CSS, use class names from CSS files-->
+        <header class="mainHeader">
+            <h1 style="margin: 0 0 6px;">Konrad's Amazing Habit Tracker</h1> <!--Main heading of the page-->
+            <p style="margin:0;">Create the habits you want, tick the day, and continously checkmark each day to keep a
+                streak. Good Luck. You got this!</p> <!--A paragraph to describe the purpose of the page-->
+        </header>
+        <section class="tipBox" aria-live="polite">
+            <!--A tip box to help user to access habit tracker, with polite aria-live for screen readers-->
+            <strong>Useful Tip:</strong> Click on a day cell to toggle. Can also use tab to focus, and press space or enter
+            to toggle!
+        </section>
+        <section class ="motivationalQuote" aria-live="polite">
+            <!--A motivational quote box to encourage user, with polite aria-live for screen readers-->
+            <p id ="motivational-quote"></p>
+        </section>
+        <section class="habitFormSection" aria-labelledby="add-title">
+            <!--Section for the habit form, with aria-labelledby for accessibility-->
+            <h2 id="add-title" style="margin: 0 0 8px;color:#0b3b58;">Add A Habit</h2>
+            <form id="habit-form" style="display:flex;gap:8px;align-items:center;">
+                <!--Form that adds a newly made habit-->
+                <label for="habit-name" class="sr-only">Habit Name</label> <!--Use sr-only class for accessibility-->
+                <input id="habit-name" name="habitName" type="text" required placeholder="e.g. Do 10 Pushups"
+                    autocomplete="off" class="habitInput"><!--Input field for habit name-->
+                <button type="submit" class="btn"
+                    style="background:#009900;color:#fff;border:none;padding:10px 14px;border-radius:8px;cursor:pointer;">Add</button>
+            </form>
+        </section>
+        <section class="mainTrackerSection" aria-labelledby="tracker-title">
+            <!--Main section for the habit tracker, with aria-labelledby for accessibility-->
+            <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+                <h2 id="tracker-title" style="margin:0;color:#0b3b58;">Current Week</h2>
+                <div id="week-range" style="color:#66788a;"></div>
+                <!--Div to show the current week range which JS will fill in-->
+            </div>
+            <div class="scrollTable">
+                <div class="gridHeader">
+                    <div class="gridCell">Habit</div>
+                    <div class="gridCell">Day 6</div>
+                    <div class="gridCell">Day 5</div>
+                    <div class="gridCell">Day 4</div>
+                    <div class="gridCell">Day 3</div>
+                    <div class="gridCell">Day 2</div>
+                    <div class="gridCell">Yesterday</div>
+                    <div class="gridCell">Today</div>
+                    <div class="gridCell">Streak</div>
+                    <div class="gridCell">Actions</div>
+                </div>
+                <div id="rows"></div> <!--Div where JS will dynamically insert habit rows-->
+            </div>
+        </section>
+        <section class="dataManagement" aria-labelledby="manage-title">
+            <!--Section for data management, with aria-labelledby for accessibility-->
+            <h3 id="manage-title" style="margin:0 0 8px; color:#0b3b58;">Manage Data</h3>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                <button id="export-json"
+                    style="background:#eef7ff;color:#046f95;border:none;padding:10px 14px;border-radius:8px;cursor:pointer;">Export
+                    JSON</button>
+                <label
+                    style="display:inline-flex;align-items:center;gap:8px;background:#eef7ff;color:#046f95;border:none;padding:10px 14px;border-radius:8px;cursor:pointer;">
+                    Import JSON
+                    <input id="import-json" type="file" accept="application/json" hidden">
+                </label>
+                <button id="reset-all" class="btn"
+                    style="background:#c71f23;color:#fff;border:none;padding:10px 14px;border-radius:8px;cursor:pointer;">Reset
+                    All Data</button>
+            </div>
+            <br>
+            <p style="margin:8px 0 0;color:#66788a;">You can export your habit data as a JSON file to back it up or
+                transfer it to another device. To import, select a previously exported JSON file. Resetting will clear
+                all your habit data, so use it with caution!<br><br> Data is stored locally in your broswer using
+                localStorage</p>
+        </section>
+        <footer class="mainFooter"> All built from just HTML, CSS and JavaScript. No Server or Frameworks required!!
+            <br> Konrad Szulc 2025 Habit Tracker Project 1
+        </footer>
+    </main>
+    <script src="/js/app.js"></script>
+    <!--This Links the external JavaScript file for interactivity, 
+        best at the end for html due to numerous benefits like page load speed, 
+        better UX, allows HTML elements to be loaded before used by JS -->
+</body>
+
+</html>
