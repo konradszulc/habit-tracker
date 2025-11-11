@@ -168,12 +168,12 @@ function render() {
             btn.addEventListener("keydown", e => {
                 if (e.key === " " || e.key === "Enter") {
                     e.preventDefault(); //will prevent default scrolling for space key
-                    btn.click(); //to trigger click event
+                    btn.click(); //to trigger a click event
                 }
             });
 
-            col.appendChild(btn); //this adds button to the column
-            row.appendChild(col); //this adds column to the row
+            col.appendChild(btn); //this adds a button to the column
+            row.appendChild(col); //this adds a column to the row
         });
 
         //add streak counter
