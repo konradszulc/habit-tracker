@@ -1,4 +1,5 @@
-/*Global Styles*/
+/*------Global Styles------*/
+
 :root {
     --brand-1: #019dd5;
     --brand-2: #00bfff;
@@ -36,7 +37,7 @@ input:focus {
     /*Focus styles for buttons and inputs for accessibility like keyboard users*/
 }
 
-/*Below are Styles for the index.html page of the habit tracker */
+/*------Below are Styles for the index.html page of the habit tracker------*/
 
 .mainBody {
     max-width: 980px;

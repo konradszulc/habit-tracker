@@ -82,7 +82,8 @@ function computeStreak(habit) {
     return count; //return the final streak count
 }
 
-//Require function to render page, every time it is called it will update the page based on current state
+/*------Require function to render page, every time it is called it will update the page based on current state------*/
+
 function render() {
 
     rows.innerHTML = ""; //this will clear the rows of the HTML table to prepare for re-rendering
@@ -213,7 +214,7 @@ function render() {
     });
 }
 
-//Event Handler and change state functions
+/*------Event Handler and change state functions------*/
 
 //toggle a habit's log for a specific day
 function onToggleDay(e) {
@@ -246,7 +247,7 @@ document.getElementById("habit-form").addEventListener("submit", e => {
     render();
 });
 
-//Manage all Data, with JSON files export, importing or deleting
+/*------Manage all Data, with JSON files export, importing or deleting------*/
 
 //export as JSON File
 document.getElementById("export-json").addEventListener("click",() => {
