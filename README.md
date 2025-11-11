@@ -1,6 +1,6 @@
 # **Konrad's Amazing Habit Tracker**
 
-Welcome to My Habit Tracker Repo, This was a project for my Dynamic Web Applications with JavaScript Course. It includes a handy site to store, motivate, and keep track of habits worth tracking for the last 7 days. You can add or delete a habit, mark days that have been completed, and watch as the counter goes up. All saved to the local browser storage, that can then be made into JSON file if so desired. It can import JSON files to view old kept logs of what habits you did, and if want to save a log, then export a JSON file as well. You do not want any? well Delete it all and reset the whole table/local storage. 
+Welcome to My Habit Tracker Repo. This was a project for my Dynamic Web Applications with JavaScript Course. It includes a handy site to store, motivate, and keep track of habits worth tracking for the last 7 days. You can add or delete a habit, mark days that have been completed, and watch as the counter for streak goes up. All saved to the local browser storage, that can then be made into JSON file if so desired. It can import JSON files to view old kept logs of what habits you did, and if want to save a log, then export a JSON file as well. You do not want any? well Delete it all and reset the whole table/local storage. 
 
 ## Key Features
 
