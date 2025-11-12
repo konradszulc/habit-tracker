@@ -25,8 +25,8 @@ habit-tracker/
 ├── js/
 │   └── app.js             # Main JavaScript file
 ├── screenshots/
-│    ├── emptyRender.jpeg       # Example of site with no data
-│    └── examplesRender.jpeg    # Example of site with data
+│    ├── emptyRender.JPG       # Example of site with no data
+│    └── examplesRender.JPG    # Example of site with data
 └── README.md              # Project documentation
 ```
 
@@ -35,7 +35,7 @@ habit-tracker/
 Please Use the following Github Pages link: https://konradszulc.github.io/habit-tracker/
 which will work for either Mac or Windows
 
-if preffered to use locally:
+if preferred to use locally:
 1. Save all files to your local computer/Clone Repository
 
 ```bash
@@ -49,6 +49,12 @@ git clone https://github.com/your-username/habit-tracker.git
 Below includes some screenshots of how the site should look on first render, and after potential habits are added.
 
 ## Screenshots
+
+Site Empty Data
+![Screenshot of empty data site](screenshots/emptyRender.JPG)
+
+Site With Data
+![Screenshot of site with data](screenshots/examplesRender.JPG)
 
 ## Self Assessment
 
@@ -95,7 +101,7 @@ Total: 4 points (1 Safe and Reliable)
 - Clarity: Provides the key features, with project structure to navigate, and in reflections mentions some limitations. .5 point
 - Reflection & Self-Assessment: Through reflection with considerable effort, and created self assessment for each section. 1 point
 
-Total:2.5 points (1 Complete & Clear)
+Total: 2.5 points (1 Complete & Clear)
 
 ### Deployment
 
