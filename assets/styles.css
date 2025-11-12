@@ -31,10 +31,11 @@ body {
 }
 
 button:focus,
-input:focus {
+input:focus,
+label:focus {
     outline: 3px solid var(--ring);
     outline-offset: 2px;
-    /*Focus styles for buttons and inputs for accessibility like keyboard users*/
+    /*Focus styles for buttons, inputs, specific labels for accessibility like keyboard users*/
 }
 
 /*------Below are Styles for the index.html page of the habit tracker------*/

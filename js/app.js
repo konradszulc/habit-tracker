@@ -1,6 +1,17 @@
 // Get the element with ID "rows" for later use in function
 const rows = document.getElementById("rows");
 
+//Get the label for import-json for later use
+const label = document.querySelector('label[for="import-json"]');
+
+//Add keydown event listener to label Import JSOn to trigger click on input when space or enter is pressed for keyboard navigation
+label.addEventListener("keydown", e => {
+    if (e.key === " " || e.key === "Enter") {
+        e.preventDefault(); //will prevent default scrolling for space key
+        label.click(); //to trigger a click event on the label
+    }
+});
+
 //Motivational quotes array
 const writtenQuotes = [
     "Believe in yourself, you are the best!",
@@ -250,7 +261,7 @@ document.getElementById("habit-form").addEventListener("submit", e => {
 /*------Manage all Data, with JSON files export, importing or deleting------*/
 
 //export as JSON File
-document.getElementById("export-json").addEventListener("click",() => {
+document.getElementById("export-json").addEventListener("click", () => {
     const blob = new Blob([JSON.stringify(state, null, 2)], { type: "application/json" });//this creates a blob from the state object
     const url = URL.createObjectURL(blob); //this creates a URL for the blob
     const a = document.createElement("a"); //this creates an anchor element
@@ -261,7 +272,7 @@ document.getElementById("export-json").addEventListener("click",() => {
 });
 
 //import from JSON file
-document.getElementById("import-json").addEventListener("change", async (e)=> {
+document.getElementById("import-json").addEventListener("change", async (e) => {
     const file = e.target.files?.[0]; //this gets the selected file
     if (!file) return; //if no file selected, do nothing
 
@@ -269,13 +280,13 @@ document.getElementById("import-json").addEventListener("change", async (e)=> {
         const test = await file.text(); //this reads the file content as text
         const data = JSON.parse(test); //this parses the text as JSON
         if (!Array.isArray(data.habits)) throw new Error("Invalid data format"); //this checks if the data format is valid
-        
+
         state = data; //this sets the state to the imported data
-        saveState(state); 
-        render(); 
-        alert ('Import successful!. Data has been loaded.'); //will show success alert
-        } catch (err) {
-        alert ("Failed to import data: Please verify the JSON file format"); //will show error alert if import fails
+        saveState(state);
+        render();
+        alert('Import successful!. Data has been loaded.'); //will show success alert
+    } catch (err) {
+        alert("Failed to import data: Please verify the JSON file format"); //will show error alert if import fails
     }
     e.target.value = ""; //this will clear the file input
 });
@@ -285,7 +296,7 @@ document.getElementById("reset-all").addEventListener("click", () => {
     if (!confirm("Delete all habit and log data?")) return; //this will end the function if user cancels
 
     state = { habits: [] }; //this resets the state to an empty habits array
-    saveState(state); 
+    saveState(state);
     render();
     alert("All data has been reset."); //this shows a confirmation alert
 });

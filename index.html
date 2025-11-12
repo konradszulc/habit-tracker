@@ -35,12 +35,12 @@
         </header>
         <section class="tipBox" aria-live="polite">
             <!--A tip box to help user to access habit tracker, with polite aria-live for screen readers-->
-            <strong>Useful Tip:</strong> Click on a day cell to toggle. Can also use tab to focus, and press space or enter
-            to toggle!
+            <strong>Useful Tip:</strong> Click on a day cell to toggle. Can also use tab to focus, and press space or
+            enter to toggle!
         </section>
-        <section class ="motivationalQuote" aria-live="polite">
+        <section class="motivationalQuote" aria-live="polite">
             <!--A motivational quote box to encourage user, with polite aria-live for screen readers-->
-            <p id ="motivational-quote"></p>
+            <p id="motivational-quote"></p>
         </section>
         <section class="habitFormSection" aria-labelledby="add-title">
             <!--Section for the habit form, with aria-labelledby for accessibility-->
@@ -84,10 +84,11 @@
                 <button id="export-json"
                     style="background:#eef7ff;color:#046f95;border:none;padding:10px 14px;border-radius:8px;cursor:pointer;">Export
                     JSON</button>
-                <label
+                <label for="import-json" tabindex="0"
                     style="display:inline-flex;align-items:center;gap:8px;background:#eef7ff;color:#046f95;border:none;padding:10px 14px;border-radius:8px;cursor:pointer;">
                     Import JSON
                     <input id="import-json" type="file" accept="application/json" hidden>
+                    <!--Hidden file input for importing JSON, requires label to be accessible for focus and keydown press for keyboard navigation-->
                 </label>
                 <button id="reset-all" class="btn"
                     style="background:#c71f23;color:#fff;border:none;padding:10px 14px;border-radius:8px;cursor:pointer;">Reset
