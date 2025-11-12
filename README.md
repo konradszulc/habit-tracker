@@ -134,6 +134,8 @@ A challenge I faced was the debugging process, as sometimes, code can miss some 
 
 While there is no video link in the public Repo, those who have received the video link can use this section to know which parts are addressed through these time stamps:
 
-00:00 Introduction and problem fixed with Habit Tracker
-
-
+00:00 Introduction, problem fixed with Habit Tracker and Structure
+01:00 Core Features and Technologies
+02:00 Demo Adding, ticking, Exporting/Importing
+03:30 Code Highlight: ForEach loop in Storage, createElement filling out information into the table 
+04:50 Conclusion
